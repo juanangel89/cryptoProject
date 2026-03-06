@@ -1,59 +1,34 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+Análisis de Requisitos
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Requisitos Funcionales (RF)
+Son las funciones que el usuario puede realizar en la aplicación.
 
-## About Laravel
+Visualización en Tiempo Real: El sistema debe mostrar el precio actualizado de las 9 criptomonedas más importantes.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Gráficos Comparativos: El sistema debe generar un gráfico mixto que contraste el precio (línea) contra la variación porcentual de 24h (barras).
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Buscador Reactivo: El usuario debe poder filtrar monedas por nombre o símbolo sin recargar la página.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Detalles Expandidos: Al interactuar con la gráfica o la lista, se deben mostrar datos técnicos como Volumen y Market Cap.
 
-## Learning Laravel
+Requisitos No Funcionales (RNF)
+Son las propiedades que hacen que el sistema sea profesional y eficiente.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+Eficiencia de API: Implementar un sistema de caché para no exceder el límite de peticiones de CoinMarketCap.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Precisión Numérica: Manejo de hasta 2 decimales para precios y porcentajes para facilitar la lectura.
 
-## Laravel Sponsors
+Responsividad: La interfaz debe adaptarse a diferentes tamaños de pantalla (gracias a Chart.js y CSS).
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Seguridad: Uso de variables de entorno (.env) para proteger las credenciales de la API.2. 
 
-### Premium Partners
+Estructura de Datos (Data Model)Para que el proyecto fuera ligero, definimos un modelo de datos "plano" que el controlador de Laravel entrega al frontend. Esta es la estructura del objeto JSON que viaja entre el servidor y el cliente:
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+Campo               Tipo         Descripción
+name                String       Nombre completo (ej: Bitcoin).
+symbol              String       Código de mercado (ej: BTC).
+logo                String(URL)  Enlace a la imagen oficial de la moneda.
+price               Float        Precio actual redondeado a 2 decimales.
+percent_change_24h  Float        Variación positiva o negativa del día.
+market_cap          Integer      Valor total de mercado.
 
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
