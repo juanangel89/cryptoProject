@@ -27,12 +27,12 @@ Son las propiedades que hacen que el sistema sea profesional y eficiente.
 
 Para que el proyecto fuera ligero, definimos un modelo de datos "plano" que el controlador de Laravel entrega al frontend. Esta es la estructura del objeto JSON que viaja entre el servidor y el cliente:
 
-Campo                   Tipo             Descripción
-
-name                    String           Nombre completo (ej: Bitcoin).
-symbol                  String           Código de mercado (ej: BTC).
-logo                    String(URL)      Enlace a la imagen oficial de la moneda.
-price                   Float            Precio actual redondeado a 2 decimales.
-percent_change_24h      Float            Variación positiva o negativa del día.
-market_cap              Integer          Valor total de mercado.
+| Campo | Tipo | Descripción |
+| :--- | :--- | :--- |
+| **name** | String | Nombre completo (ej: Bitcoin). |
+| **symbol** | String | Código de mercado (ej: BTC). |
+| **logo** | String (URL) | Enlace a la imagen oficial de la moneda. |
+| **price** | Float | Precio actual redondeado a 2 decimales. |
+| **percent_change_24h** | Float | Variación positiva o negativa del día. |
+| **market_cap** | Integer | Valor total de mercado. |
 
