@@ -1,4 +1,4 @@
-- Análisis de Requisitos
+--Análisis de Requisitos--
 
 Requisitos Funcionales (RF)
 Son las funciones que el usuario puede realizar en la aplicación.
@@ -20,9 +20,12 @@ Son las propiedades que hacen que el sistema sea profesional y eficiente.
 
 - Responsividad: La interfaz debe adaptarse a diferentes tamaños de pantalla (gracias a Chart.js y CSS).
 
-- Seguridad: Uso de variables de entorno (.env) para proteger las credenciales de la API.2. 
+- Seguridad: Uso de variables de entorno (.env) para proteger las credenciales de la API.2.
+  
 
-Estructura de Datos (Data Model)Para que el proyecto fuera ligero, definimos un modelo de datos "plano" que el controlador de Laravel entrega al frontend. Esta es la estructura del objeto JSON que viaja entre el servidor y el cliente:
+--Estructura de Datos--
+
+Para que el proyecto fuera ligero, definimos un modelo de datos "plano" que el controlador de Laravel entrega al frontend. Esta es la estructura del objeto JSON que viaja entre el servidor y el cliente:
 
 Campo                   Tipo             Descripción
 
