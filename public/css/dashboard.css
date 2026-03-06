@@ -10,3 +10,10 @@
 .crypto-item{
     width: 18rem;
 }
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+}
